@@ -1,3 +1,10 @@
+# Web Based serial terminal
+
+Progressive web app using Web Serial API
+
+Live demo: [https://term.netlify.com](https://term.netlify.com)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

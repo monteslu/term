@@ -43,6 +43,7 @@ class App extends React.Component {
       this.term.attach(serial);  // Attach the above socket to `term`
     });
     serial.on('error', console.error);
+    global.serial = serial;
   }
 
   render() {
