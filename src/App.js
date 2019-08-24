@@ -50,13 +50,20 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div style={{margin: '5px'}}>
+          {navigator.serial ? (
+            <div style={{margin: '5px', fontSize: '1.5rem'}}>
             baud:
-            <select value={this.state.baudrate} onChange={this.handleChange} style={{margin: '5px'}}>
+            <select value={this.state.baudrate} onChange={this.handleChange} style={{margin: '5px', fontSize: '1rem'}}>
               {baudrates.map((br) => (<option key={br}>{br}</option>))}
             </select>
-            <button onClick={this.handleConnect}>Connect</button>
+            <button onClick={this.handleConnect} style={{margin: '5px', fontSize: '1rem'}}>Connect</button>
           </div>
+          ) : (
+            <div style={{margin: '5px', fontSize: '1.5rem', color: 'white'}}>
+              <a href="https://wicg.github.io/serial/" rel="noopener noreferrer" target="_blank" style={{color: 'white'}}>Web Serial API not available</a>
+            </div>
+          )}
+          
           <div ref={this.termContainer}></div>
         </header>
       </div>
